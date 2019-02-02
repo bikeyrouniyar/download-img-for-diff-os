@@ -14,17 +14,33 @@ export class LogoComponent implements OnInit {
    }
    epicFunction(){ 
      console.log('hello');
-     this.deviceInfo=this.deviceService.getDeviceInfo();
-     const isMobile =this.deviceService.isMobile();
-     const isTablet = this.deviceService.isTablet();
-     const isDesktopDevice = this.deviceService.isDesktop();
-     if(isMobile) return('ye to mobile hai');
-     if(isTablet) return ('ye to tablet hai');
-     if(isDesktopDevice) return ('ye to desktop hai'); 
+     //this.deviceInfo=this.deviceService.getDeviceInfo();
+     //const isMobile =this.deviceService.isMobile();
+    //  const isTablet = this.deviceService.isTablet();
+      const isDesktopDevice = this.deviceService.isDesktop();
+     //console.log(this.deviceInfo);
+     
+    // if(isMobile) return true;
+     //else if(isTablet) return ('ye to tablet hai');
+      if(isDesktopDevice) return true;
+     
    }
 
   ngOnInit() {
-  this.epicFunction();
+  this.epicFunction()
+  this.iosFunction();
+  }
+
+  iosFunction(){
+    if(navigator.vendor != null && navigator.vendor.match(/Apple Computer, Inc./) && 
+    navigator.userAgent.match(/iPhone/i) ) 
+
+   {
+      
+       return true;
+
+   }
+   else return false;
   }
 
 }

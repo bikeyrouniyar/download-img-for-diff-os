@@ -1,9 +1,29 @@
-<p>
+<!-- <p>
   <img _ngcontent-c0="" class="googlePlayStoreImg col-xs-12 nopad" src="https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/ios-logo.png">
 </p>
 <div>
-  <img _ngcontent-c0="" class="googlePlayStoreImg col-xs-12 nopad" src="https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/googlePlayStoreIcon.png">
+  <img _ngcontent-c0="" class="googlePlayStoreImg col-xs-12 nopad" 
+  src="https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/googlePlayStoreIcon.png">
 </div>
 <div>
 {{epicFunction()}}
-</div>
+</div>  -->
+ <div *ngIf="epicFunction() || !iosFunction()">
+    <img src="https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/googlePlayStoreIcon.png">
+  </div> 
+<div *ngIf="epicFunction() || iosFunction()" >
+  <img src="https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/ios-logo.png">
+</div> 
+
+<!-- <div> *ngIf="epicFunction || !iosFunction"> -->
+  <!-- <div>
+  <img src="{{epicFunction || !iosFunction  ? 'https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/googlePlayStoreIcon.png' :
+   'https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/ios-logo.png'}}">
+   <div  *ngIf="iosFunction || epicFunction">
+   <img src="{{epicFunction || iosFunction  ? 'https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/ios-logo.png' :
+   'https://s3.amazonaws.com/admitkard-frontend-resources/img/otherImg/ios-logo.png'  }}">
+   </div>
+    
+  </div> -->
+
+
